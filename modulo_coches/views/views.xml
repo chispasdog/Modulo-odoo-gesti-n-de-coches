@@ -1,0 +1,86 @@
+<odoo>
+  <data>
+      <!-- Vista de lista para vehículos -->
+      <record id="view_vehiculo_list" model="ir.ui.view">
+          <field name="name">gestion.vehiculo.list</field>
+          <field name="model">gestion.vehiculo</field>
+          <field name="arch" type="xml">
+              <tree>
+                  <field name="name"/>
+                  <field name="modelo"/>
+                  <field name="año"/>
+                  <field name="color"/>
+                  <field name="matricula"/>
+                  <field name="marca_id"/>
+                  <field name="estado"/>
+                  <field name="valor_estimado"/>
+              </tree>
+          </field>
+      </record>
+
+      <!-- Vista de formulario para vehículos -->
+      <record id="view_vehiculo_form" model="ir.ui.view">
+          <field name="name">gestion.vehiculo.form</field>
+          <field name="model">gestion.vehiculo</field>
+          <field name="arch" type="xml">
+              <form>
+                  <sheet>
+                      <group>
+                          <field name="name"/>
+                          <field name="modelo"/>
+                          <field name="año"/>
+                          <field name="color"/>
+                          <field name="matricula"/>
+                          <field name="precio"/>
+                          <field name="marca_id"/>
+                          <field name="estado"/>
+                          <field name="valor_estimado" readonly="1"/>
+                      </group>
+                      <notebook>
+                          <page string="Reparaciones">
+                              <field name="reparaciones_ids">
+                                  <tree>
+                                      <field name="name"/>
+                                      <field name="fecha"/>
+                                      <field name="costo"/>
+                                  </tree>
+                              </field>
+                          </page>
+                      </notebook>
+                  </sheet>
+              </form>
+          </field>
+      </record>
+      <!-- Menú principal para el módulo de gestión de vehículos -->
+<menuitem id="gestion_vehiculo_menu" name="Gestión de Vehículos" sequence="10"/>
+
+<!-- Menú para Vehículos -->
+<menuitem id="gestion_vehiculo_vehiculos_menu" name="Vehículos" parent="gestion_vehiculo_menu" sequence="1"/>
+<menuitem id="gestion_vehiculo_marcas_menu" name="Marcas" parent="gestion_vehiculo_menu" sequence="2"/>
+
+<record id="action_vehiculo" model="ir.actions.act_window">
+  <field name="name">Vehículos</field>
+  <field name="res_model">gestion.vehiculo</field>
+  <field name="view_mode">tree,form</field>
+</record>
+
+<record id="action_vehiculo_view_tree" model="ir.actions.act_window.view">
+  <field name="view_mode">tree</field>
+  <field name="view_id" ref="view_vehiculo_list"/>
+  <field name="act_window_id" ref="action_vehiculo"/>
+</record>
+
+<record id="action_vehiculo_view_form" model="ir.actions.act_window.view">
+  <field name="view_mode">form</field>
+  <field name="view_id" ref="view_vehiculo_form"/>
+  <field name="act_window_id" ref="action_vehiculo"/>
+</record>
+
+<!-- Vinculación del menú de vehículos con la acción -->
+<menuitem id="menu_action_vehiculo" parent="gestion_vehiculo_vehiculos_menu" action="action_vehiculo"/>
+
+      <!-- seguir mirando el tema de mas vistas -->
+      <!-- comprobar si se pueden añadir datos especiales y templates de las buenas   -->
+      <!-- seguir corrigiendo faltas ortográficas   -->
+  </data>
+</odoo>

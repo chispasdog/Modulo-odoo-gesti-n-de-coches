@@ -1,0 +1,37 @@
+<odoo>
+    <data noupdate="1">
+        <!-- Definición de grupos -->
+        <record id="group_gestion_vehiculo_user" model="res.groups">
+            <field name="name">Usuario de Gestión de Vehículos</field>
+            <field name="category_id" ref="module_category_your_category"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        </record>
+        <record id="group_gestion_vehiculo_manager" model="res.groups">
+            <fields name="name">Administrador de Gestión de Vehículos</fields>
+            <field name="category_id" ref="module_category_your_category"/>
+            <field name="implied_ids" eval="[(4, ref('group_gestion_vehiculo_user'))]"/>
+        </record>
+
+        <!-- Permisos de acceso para los modelos -->
+        <record id="gestion_vehiculo_model_access_user" model="ir.model.access">
+            <field name="name">access_gestion_vehiculo_user</field>
+            <field name="model_id" ref="model_gestion_vehiculo"/>
+            <field name="group_id" ref="group_gestion_vehiculo_user"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+        <record id="gestion_vehiculo_model_access_manager" model="ir.model.access">
+            <field name="name">access_gestion_vehiculo_manager</field>
+            <field name="model_id" ref="model_gestion_vehiculo"/>
+            <field name="group_id" ref="group_gestion_vehiculo_manager"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+        <!-- Agrega permisos similares para otros modelos como marca y reparacion -->
+    </data>
+</odoo>

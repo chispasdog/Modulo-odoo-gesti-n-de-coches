@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gestion_vehiculo,gestion.vehiculo,model_gestion_vehiculo,,1,1,1,1
+access_gestion_marca,gestion.marca,model_gestion_marca,,1,1,1,1
+access_gestion_reparacion,gestion.reparacion,model_gestion_reparacion,,1,1,1,1
