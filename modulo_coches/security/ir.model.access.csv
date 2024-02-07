@@ -1,7 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_gestion_vehiculo_user,gestion.vehiculo,model_gestion_vehiculo,group_gestion_vehiculo_user,1,0,0,0
-access_gestion_vehiculo_manager,gestion.vehiculo,model_gestion_vehiculo,group_gestion_vehiculo_manager,1,1,1,1
-access_gestion_marca_user,gestion.marca,model_gestion_marca,group_gestion_vehiculo_user,1,0,0,0
-access_gestion_marca_manager,gestion.marca,model_gestion_marca,group_gestion_vehiculo_manager,1,1,1,1
-access_gestion_reparacion_user,gestion.reparacion,model_gestion_reparacion,group_gestion_vehiculo_user,1,0,0,0
-access_gestion_reparacion_manager,gestion.reparacion,model_gestion_reparacion,group_gestion_vehiculo_manager,1,1,1,1
+access_gestion_vehiculo,gestion.vehiculo,model_gestion_vehiculo,,1,1,1,1
+access_gestion_marca,gestion.marca,model_gestion_marca,,1,1,1,1
+access_gestion_reparacion,gestion.reparacion,model_gestion_reparacion,,1,1,1,1
