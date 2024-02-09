@@ -18,7 +18,7 @@
           </field>
       </record>
 
-      <!-- Vista de formulario para vehículos -->
+       
       <record id="view_vehiculo_form" model="ir.ui.view">
           <field name="name">gestion.vehiculo.form</field>
           <field name="model">gestion.vehiculo</field>
@@ -79,8 +79,7 @@
 <!-- Vinculación del menú de vehículos con la acción -->
 <menuitem id="menu_action_vehiculo" parent="gestion_vehiculo_vehiculos_menu" action="action_vehiculo"/>
 
-      <!-- seguir mirando el tema de mas vistas -->
-      <!-- comprobar si se pueden añadir datos especiales y templates de las buenas   -->
-      <!-- seguir corrigiendo faltas ortográficas   -->
+      <!-- seguir mirando el tema de mas vistas haber quetral-->
+      <!-- seguir corrigiendo faltas ortográficas    -->
   </data>
 </odoo>
